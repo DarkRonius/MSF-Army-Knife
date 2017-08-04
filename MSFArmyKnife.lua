@@ -28,15 +28,77 @@ function e.Update()
 		
 		if (bit.band(PlayerVars.scannedButtonsDirect,PlayerPad.LEFT)==PlayerPad.LEFT and bit.band(PlayerVars.scannedButtonsDirect,PlayerPad.CALL)==PlayerPad.CALL)then
 
-			TppUiCommand.AnnounceLogView("I want to get off Mr Bones Wild Ride")
+			vars.playerDisableActionFlag = PlayerDisableAction.NONE
 			
 			Player.ResetPadMask {
-			settingName = "limitMove"
+				settingName = "limitMove"
 			}
 
 			Player.ResetPadMask {
-			settingName = "restrictAttacks"
+				settingName = "restrictAttacks"
 			}
+
+			Player.ResetPadMask {
+				settingName = "CodeTalkerMonologue",	
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_bed"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_normal"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_beforeGetGun"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_combat"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_demo"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_loading"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_avatar"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_entrance_qte"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_corridor"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_gameOver"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_2f"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_camera"
+			}
+
+			Player.ResetPadMask {
+				settingName = "cypr_all"
+			}
+
+			vars.playerDisableActionFlag = PlayerDisableAction.NONE
+
+			TppUiCommand.AnnounceLogView("141.12: Actions Enabled")
+
+			TppUiCommand.AnnounceLogView("Otacon, I can't move!")
 
 			pressTicks = gameTicks + PRESS_TICK_DELAY
 
@@ -52,9 +114,10 @@ function e.Update()
 
 		end
 		
-		gameTicks = gameTicks + 1
-
 	end
+
+	gameTicks = gameTicks + 1
+
 end
 
 function e.OnTerminate()end

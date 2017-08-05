@@ -106,14 +106,9 @@ function e.Update()
 
 		if (bit.band(PlayerVars.scannedButtonsDirect,PlayerPad.UP)==PlayerPad.UP and bit.band(PlayerVars.scannedButtonsDirect,PlayerPad.CALL)==PlayerPad.CALL)then
 
-			if vars.missionCode ~= 50050 then
-  				if Tpp.IsSoldier(r)
-    			or Tpp.IsHostage(r)
-    				then
-     		 	GameObject.SendCommand( r, { id = "RequestForceFulton" } ) --r1
-  			end
+			Player.ResetLifeMaxValue()
 			
-			TppUiCommand.AnnounceLogView("140.85: Fulton request received")
+			TppUiCommand.AnnounceLogView("Your Life/Psyche is looking good, Snake!")
 
 			pressTicks = gameTicks + PRESS_TICK_DELAY
 
